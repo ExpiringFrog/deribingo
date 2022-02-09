@@ -4,12 +4,6 @@ The goal of this competition is to achieve bingo (i.e., a straight line of four 
 
 The competition has a max duration of 2 hours.
 
-The prizes are as follows:
-
-- 1st place: Ledger with BTC
-- 2nd place: Ledger with BTC
-- 3rd place: Ledger with BTC
-
 ## Introduction
 
 This repository contains two different methods (synchronous or asynchronous) on how to connect to the Deribit API using the websocket protocol.
@@ -69,7 +63,7 @@ def on_message(message):
 As a starting example, a simple authentication request is shown in the files `sync.py` and `async.py`.
 
 ## Implementation
-Implement your solution in the `main.py` file. You can copy the contents of either examples as a starting point.
+Implement your solution in the `main.py` file. You can copy the contents of either example as starting point.
 
 ## Debugging
 
