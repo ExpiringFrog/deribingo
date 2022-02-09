@@ -10,7 +10,7 @@ This repository contains two different methods (synchronous or asynchronous) on 
 
 ## Setup
 
-Replace CLIENT_ID and CLIENT_SECRET with the values you received and run both scripts. The console should show something like 
+Replace `CLIENT_ID` and `CLIENT_SECRET` with the values you received and run both scripts. The console should show something like: 
 ```json
 {
     "jsonrpc":"2.0",
@@ -28,7 +28,7 @@ Replace CLIENT_ID and CLIENT_SECRET with the values you received and run both sc
 }
 
 ```
-If the console instead shows
+If the console instead shows:
 ```json
 {
     "jsonrpc":"2.0",
@@ -42,7 +42,7 @@ If the console instead shows
     "testnet": true
 }
 ```
-recheck your credentials or ask for help.
+re-check your credentials or ask for help.
 
 ## Usage
 
