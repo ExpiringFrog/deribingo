@@ -1,5 +1,5 @@
 import json
-from websocket import create_connection
+from lib.websocket import create_connection
 
 CLIENT_ID = "EXjnCvwy"
 CLIENT_SECRET = "x8cjpn1t5zQlG-gi68zpv4AIac8iOQ8VDw4bz_DFGyQ"
