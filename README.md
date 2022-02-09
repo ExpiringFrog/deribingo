@@ -2,11 +2,13 @@
 
 The goal of this competition is to achieve bingo (i.e., a straight line of four cells) on the 'Deringo' card. Detailed explanations of each bingo cell/goal can be found [here](https://docs.google.com/document/d/1Oy7x9-gnVWtSWdc9Lv9OxfJLfyjU_mMeKO6PzLIrAqo/edit?usp=sharing).
 
+The competition has a max duration of 2 hours.
+
 The prizes are as follows:
 
-- 1st place:        3 BTC 
-- 2nd place:    BTC
-- 3rd place:    BTC
+- 1st place: Ledger with BTC
+- 2nd place: Ledger with BTC
+- 3rd place: Ledger with BTC
 
 ## Introduction
 
