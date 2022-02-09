@@ -1,31 +1,59 @@
-# Deribingo example
+# Deribingo
 
-This repository contains two small examples showing how to connect to Deribit using the Websocket protocol.
+The goal of this competition is to achieve bingo (i.e., a straight line of four cells) on the 'Deringo' card. Detailed explanations of each bingo cell/goal can be found [here](https://docs.google.com/document/d/1Oy7x9-gnVWtSWdc9Lv9OxfJLfyjU_mMeKO6PzLIrAqo/edit?usp=sharing).
 
-## Installation
+The prizes are as follows:
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the required libraries.
+- 1st place:        3 BTC 
+- 2nd place:    BTC
+- 3rd place:    BTC
 
-```bash
-pip install -r requirements.txt
-```
+## Introduction
+
+This repository contains two different methods (synchronous or asynchronous) on how to connect to the Deribit API using the websocket protocol.
 
 ## Setup
 
 Replace CLIENT_ID and CLIENT_SECRET with the values you received and run both scripts. The console should show something like 
 ```json
-{"jsonrpc":"2.0","result":{"token_type":"bearer","scope":"account:read_write block_trade:read_write connection custody:read_write mainaccount trade:read_write wallet:read_write","refresh_token":"XXXXX","expires_in":31536000,"access_token":"XXXXX"},"usIn":1643798543728896,"usOut":1643798543729367,"usDiff":471,"testnet":true}
+{
+    "jsonrpc":"2.0",
+    "result": {
+            "token_type": "bearer",
+            "scope": "account:read_write block_trade:read_write connection custody:read_write mainaccount trade:read_write wallet:read_write",
+            "refresh_token": "XXXXX",
+            "expires_in": 31536000,
+            "access_token": "XXXXX"
+    },
+    "usIn": 1643798543728896,
+    "usOut": 1643798543729367,
+    "usDiff": 471,
+    "testnet": true
+}
 
 ```
 If the console instead shows
 ```json
-{"jsonrpc":"2.0","error":{"message":"invalid_credentials","code":13004},"usIn":1643798691312610,"usOut":1643798691312668,"usDiff":58,"testnet":true}
+{
+    "jsonrpc":"2.0",
+    "error": {
+        "message": "invalid_credentials",
+        "code": 13004
+    },
+    "usIn": 1643798691312610,
+    "usOut": 1643798691312668,
+    "usDiff": 58, 
+    "testnet": true
+}
 ```
 recheck your credentials or ask for help.
 
 ## Usage
 
-There are two ways to deal with open connections: synchronously or asynchronously. The asynchronous method as shown in `async.py` uses callbacks whenever the websocket client receives an event. When a connection gets established, `on_open` gets called. When a message is received, `on_message` gets called, etc. This is useful for listening to continuously streaming data. You can filter for wanted messages in the `on message` callback function like so:
+There are two ways to deal with open connections: synchronously or asynchronously:   
+- The synchronous method is more suitable for simple blocking request-response style communication. This method is shown in `sync.py`. A request can be sent by adding a `ws.send()` followed by a blocking `ws.recv()` to get the response.
+
+- The asynchronous method as shown in `async.py` uses callbacks whenever the websocket client receives an event. When a connection gets established, `on_open` gets called. When a message is received, `on_message` gets called, etc. This is useful for listening to continuously streaming data. You can filter for wanted messages in the `on message` callback function like so:
 
 ```python
 def on_message(message):
@@ -34,6 +62,13 @@ def on_message(message):
     else:
         return 
 ```
-The other method, the synchronous method, is more suitable for simple request/response style communication. This method is shown in `sync.py`. A request can be sent by adding a `ws.send()` followed by a blocking `ws.recv()` to get the response.
+ 
 
-In both files an example request is given: the authentication.
+As a starting example, a simple authentication request is shown in the files `sync.py` and `async.py`.
+
+## Implementation
+Implement your solution in the `main.py` file. You can copy the contents of either examples as a starting point.
+
+## Debugging
+
+In Repl.it you can go to the debugger panel and add breakpoints to the code. Simply click on the run button to start debugging.
