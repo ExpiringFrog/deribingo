@@ -1,8 +1,8 @@
 import json
 from lib.websocket import *
 
-CLIENT_ID = "EXjnCvwy"
-CLIENT_SECRET = "x8cjpn1t5zQlG-gi68zpv4AIac8iOQ8VDw4bz_DFGyQ"
+CLIENT_ID = ""
+CLIENT_SECRET = ""
 
 
 def on_message(ws, message):
