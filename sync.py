@@ -1,8 +1,8 @@
 import json
 from lib.websocket import create_connection
 
-CLIENT_ID = "EXjnCvwy"
-CLIENT_SECRET = "x8cjpn1t5zQlG-gi68zpv4AIac8iOQ8VDw4bz_DFGyQ"
+CLIENT_ID = ""
+CLIENT_SECRET = ""
 
 auth_dict = {"method": "public/auth", "params": {"client_id": CLIENT_ID,
                                                  "client_secret": CLIENT_SECRET,
