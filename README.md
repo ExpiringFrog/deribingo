@@ -59,7 +59,6 @@ def on_message(message):
         return 
 ```
  
-
 As a starting example, a simple authentication request is shown in the files `sync.py` and `async.py`.
 
 ## Implementation
@@ -68,3 +67,9 @@ Implement your solution in the `main.py` file. You can copy the contents of eith
 ## Debugging
 
 In Repl.it you can go to the debugger panel and add breakpoints to the code. Simply click on the run button to start debugging.
+
+## Tips
+
+Your code only needs to work for the 2 hours of the challenge, so don't waste time writing your code too general.
+Make sure you understand the code from both examples.
+Start by analyzing the bingo card and documentation, so you can choose the fastest way to get a bingo.
