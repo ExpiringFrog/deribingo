@@ -1,79 +1,77 @@
 import json
-import pprint
+import time
 from lib.websocket import *
 
-# add your authentication keys for Deribit's testnet here.
 CLIENT_ID = ""
 CLIENT_SECRET = ""
 
+    
+def on_message(ws, message):
+  result = get_result(message)
 
-def on_message(ws, message: str):
-    """
-    This function receives a callback when the server you're connected to sends a message.
-    When the incoming message is a response indicating a successful authentication,
-    we can subscribe to data streams.
-    :param ws: the WebSocketApp class object that does the callback
-    :param message: the incoming message as string
-    """
-    message_dict = deserialize(message)
-    if "result" in message_dict.keys() and "access_token" in message_dict["result"].keys():
-        # -->SUBSCRIBE TO STREAMS HERE<--
-        # ws.send(subscription_stream)
-        pass
-    prettyprint(message)
-
-
-def on_error(ws, error):
-    """
-    This function receives a callback if the server deems an incoming message
-    invalid.
-    :param ws: the WebSocketApp class object that does the callback
-    :param error: Exception object
-    """
-    print(error)
-
-
-def on_close(ws, close_status_code, close_msg):
-    """
-    This function receives a callback if the server closes the connection.
-    :param ws: the WebSocketApp class object that does the callback
-    :param close_status_code: int
-    :param close_msg: str
-    """
-    print("Connection closed.")
-
+  # --> PARSE STREAM RESULT HERE <--
 
 def on_open(ws):
-    """
-    This function receives a callback when a websocket connection gets established.
-    We authenticate the connection in this function, before we send any other requests.
-    :param ws: the WebSocketApp class object that does the callback
-    """
-    auth_dict = {"method": "public/auth", "params": {"client_id": CLIENT_ID,
-                                                     "client_secret": CLIENT_SECRET,
-                                                     "grant_type": "client_credentials"}}
-    ws.send(serialize(auth_dict))
+  authenticate(ws)
+  time.sleep(1)
+
+  # --> SUBSCRIBE TO STREAM HERE <--
+
+def on_error(ws, error):
+  print('Error' , error)
+
+def on_close(ws, close_status_code, close_msg):
+  print("Connection closed.")
 
 
-def serialize(message_dict):
-    return json.dumps(message_dict)
+# ---------------------> HELPER FUNCTIONS <-------------------------
 
+def ws_send(ws, msg):
+  ws.send(serialize(msg))
 
-def deserialize(message_string):
-    return json.loads(message_string)
+def is_authenticated(ws, msg):
+  return "access_token" in msg.keys()
 
+def authenticate(ws):
+  msg = {
+    "method": "public/auth", 
+    "params": {
+      "client_id": CLIENT_ID,
+      "client_secret": CLIENT_SECRET, 
+      "grant_type": "client_credentials"}
+  }
+  ws_send(ws, msg)
+  
 
-def prettyprint(message_dict):
-    pprint.pprint(message_dict)
+def get_result(msg):
+  deserialized_msg = deserialize(msg)
 
+  if 'error' in deserialized_msg:
+    raise Exception(deserialized_msg['error'])
+
+  if 'result' in deserialized_msg:
+    return deserialized_msg['result']
+
+  if 'params' in deserialized_msg:
+    return deserialized_msg['params']
+  raise Exception('Unknown message')
+
+def serialize(msg):
+  return json.dumps(msg)
+
+def deserialize(msg):
+  return json.loads(msg)
+
+def pprint(obj):
+  if isinstance(obj, str):
+    obj = json.loads(obj)
+  print(json.dumps(obj, sort_keys=True, indent=4))
 
 if __name__ == "__main__":
-    # make sure to connect to testnet, not to live trading
-    ws = WebSocketApp("wss://test.deribit.com/ws/api/v2/",
-                      on_open=on_open,
-                      on_message=on_message,
-                      on_error=on_error,
-                      on_close=on_close)
+  ws = WebSocketApp("wss://test.deribit.com/ws/api/v2/",
+                              on_open=on_open,
+                              on_message=on_message,
+                              on_error=on_error,
+                              on_close=on_close)
 
-    # this function blocks indefinitely, all logic should be done in callback functions
-    ws.run_forever()
+  ws.run_forever()

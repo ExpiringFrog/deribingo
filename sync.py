@@ -1,58 +1,50 @@
 import json
-import pprint
+import time
+
 from lib.websocket import create_connection
 
 CLIENT_ID = ""
 CLIENT_SECRET = ""
 
+ws = create_connection("wss://test.deribit.com/ws/api/v2/")
 
-def authenticate(ws):
-    """
-    This function authenticates a websocket connection
-    :param ws: WebSocket object
-    """
-    auth_dict = {"method": "public/auth", "params": {"client_id": CLIENT_ID,
-                                                     "client_secret": CLIENT_SECRET,
-                                                     "grant_type": "client_credentials"}}
-    ws.send(serialize(auth_dict))
+def authenticate(client_id: str, client_secret: str):
+  msg = {
+    "method": "public/auth", 
+    "params": {
+      "client_id": client_id,
+      "client_secret": client_secret,
+      "grant_type": "client_credentials"
+      }
+  }
 
+  response = ws_send(msg)
+  if 'access_token' in response:
+    print('authenticated')
 
-def serialize(message_dict):
-    """
-    This function takes a dictionary and json serializes it
-    :param message_dict: dict
-    :return: str
-    """
-    return json.dumps(message_dict)
+def ws_send(msg):
+  ws.send(serialize(msg))
+  response = json.loads(ws.recv())
+  
+  if 'error' in response:
+    print(msg['method'])
+    pprint(response)
+  return response['result']
 
+def serialize(msg):
+  return json.dumps(msg)
 
-def deserialize(message_string):
-    """
-    This function takes a string and deserializes it to a dictionary.
-    :param message_string: str
-    :return: dict
-    """
-    return json.loads(message_string)
+def deserialize(msg):
+  return json.loads(msg)
 
-
-def prettyprint(message_dict):
-    """
-    This function prints a dictionary in a easily readable format.
-    :param message_dict: dict
-    """
-    pprint.pprint(message_dict)
+def pprint(obj):
+  if isinstance(obj, str):
+    obj = deserialize(obj)
+  print(json.dumps(obj, sort_keys=True, indent=4))
 
 
 if __name__ == "__main__":
-    # make sure to connect to testnet, not to live trading
-    ws = create_connection("wss://test.deribit.com/ws/api/v2/")
-
-    # after we successfully authenticate the connection, we can start sending other requests
-    authenticate(ws)
-    response = deserialize(ws.recv())
-    prettyprint(response)
-
-    # SEND OTHER REQUESTS HERE
-    # ws.send(serialize(request_dict))
+    authenticate(CLIENT_ID, CLIENT_SECRET)
+    # -->PUT YOUR REQUESTS HERE<--
 
     ws.close()
