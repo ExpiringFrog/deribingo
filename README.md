@@ -10,7 +10,14 @@ This instruction document explains on how to:
 - Authenticate with the Deribit API in the [Authentication](##authentication) section.
 - How to work with the Deribit API in a synchronous or asynchronous manner using the websocket protocol in the [Usage](#usage) section.
 
-## Setup 
+## Setup
+### Replit
+The easiest way to start is by using Replit, a browser-based integrated development environment (IDE). You can fork the repository by signing up [here](REPLACE_ME).
+
+### Locally
+However, if you'd like to develop locally, follow the following steps:
+
+
 
 
 ## Authentication
