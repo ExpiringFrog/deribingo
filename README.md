@@ -5,10 +5,15 @@ The goal of this competition is to achieve bingo (i.e., a straight line of four 
 The competition has a max duration of 2 hours.
 
 ## Introduction
+This instruction document explains on how to: 
+- Setup the code in the [Setup](##setup) section.
+- Authenticate with the Deribit API in the [Authentication](##authentication) section.
+- How to work with the Deribit API in a synchronous or asynchronous manner using the websocket protocol.
 
-This repository contains two different methods (synchronous or asynchronous) on how to connect to the Deribit API using the websocket protocol.
+## Setup 
 
-## Setup
+
+## Authentication
 
 Replace `CLIENT_ID` and `CLIENT_SECRET` with the values you received and run both scripts. The console should show something like: 
 ```json
