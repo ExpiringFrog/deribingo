@@ -8,7 +8,7 @@ The competition has a max duration of 2 hours.
 This instruction document explains on how to: 
 - Setup the code in the [Setup](##setup) section.
 - Authenticate with the Deribit API in the [Authentication](##authentication) section.
-- How to work with the Deribit API in a synchronous or asynchronous manner using the websocket protocol.
+- How to work with the Deribit API in a synchronous or asynchronous manner using the websocket protocol in the [Usage](#usage) section.
 
 ## Setup 
 
