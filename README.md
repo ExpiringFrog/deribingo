@@ -12,10 +12,15 @@ This instruction document explains on how to:
 
 ## Setup
 ### Replit
-The easiest way to start is by using Replit, a browser-based integrated development environment (IDE). You can fork the repository by signing up [here](REPLACE_ME).
+The easiest way to start is by using Replit, a browser-based Integrated Development Environment (IDE). You can fork the repository by signing up [here](REPLACE_ME).
 
 ### Locally
-However, if you'd like to develop locally, follow the following steps:
+However, if you'd like to develop locally, you can follow the following steps depending on your Operating System (OS).
+
+#### Windows
+#### MacOS
+#### Linux
+
 
 
 
