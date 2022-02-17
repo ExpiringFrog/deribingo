@@ -103,5 +103,6 @@ You can debug locally with:
 ## Tips
 
 - Your code only needs to work for the 2 hours of the challenge, so don't waste time writing your code too general.
+- Completing a task in one evaluation of your code is usually harder than going step-by-step.
 - Make sure you understand the code from both examples.
 - Start by analyzing the bingo card and documentation, so you can choose the fastest way to get a bingo.
