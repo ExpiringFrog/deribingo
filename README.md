@@ -15,17 +15,27 @@ This instruction document explains on how to:
 The easiest way to start is by using Replit, a browser-based Integrated Development Environment (IDE). You can fork the repository by signing up [here](REPLACE_ME).
 
 ### Locally
-However, if you'd like to develop locally, you can follow the following steps depending on your Operating System (OS).
+However, if you'd like to develop locally, you can install the dependencies with the following steps depending on your Operating System (OS).
 
-#### Windows
-#### MacOS
-#### Linux
+You're going to download and install Git and Python 3.8.2:
+
+OS   |      Python 3.8.2      |  Git |
+---------|:-------------:|------:|
+Windows 10 |  [Installer](https://www.python.org/ftp/python/3.8.2/python-3.8.2-amd64.exe) | [Installer](https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.2/Git-2.35.1.2-64-bit.exe) |
+macOS |    [Installer](https://www.python.org/ftp/python/3.8.2/python-3.8.2-macosx10.9.pkg)   |   [Instructions](https://git-scm.com/download/mac) |
+Linux | [Instructions](#) |   [Instructions](https://git-scm.com/download/linux) |
 
 
+### Get the source
+Clone the deribingo repository into your current directory:
+```bash
+git clone https://github.com/ExpiringFrog/deribingo.git
+```
 
 
 
 ## Authentication
+Once every dependency is installed and the source is downloaded, you can try to authenticate to the Deribit API.
 
 Replace `CLIENT_ID` and `CLIENT_SECRET` with the values you received and run both scripts. The console should show something like: 
 ```json
@@ -82,8 +92,13 @@ As a starting example, a simple authentication request is shown in the files `sy
 Implement your solution in the `main.py` file. You can copy the contents of either example as starting point.
 
 ## Debugging
+### Replit
+In Replit you can go to the debugger panel and add breakpoints to the code. Simply click on the run button to start debugging.
 
-In Repl.it you can go to the debugger panel and add breakpoints to the code. Simply click on the run button to start debugging.
+### Locally
+You can debug locally with:
+- The IDE of your choice
+- `pdb`. For example `python3 -m pdb sync.py`
 
 ## Tips
 
