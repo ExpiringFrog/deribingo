@@ -92,7 +92,8 @@ def on_message(message):
 As a starting example, a simple authentication request is shown in the files `sync.py` and `async.py`.
 
 ## Implementation
-Implement your solution in the `main.py` file. You can copy the contents of either example as starting point.
+### Replit.
+Implement your solution in the `main.py` file, because Replit runs that file. You can copy the contents of either example as starting point.
 
 ## Debugging
 ### Replit
