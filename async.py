@@ -14,6 +14,7 @@ def on_message(ws, message):
 def on_open(ws):
   authenticate(ws)
   time.sleep(1)
+  print('authenticated')
 
   # --> SUBSCRIBE TO STREAM HERE <--
 
