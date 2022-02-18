@@ -36,7 +36,9 @@ git clone https://github.com/ExpiringFrog/deribingo.git
 
 ## Authentication
 Once every dependency is installed and the source is downloaded, you can try to authenticate to the Deribit API.
-You can get your `CLIENT_ID` and `CLIENT_SECRET` by selecting the row with the number you received from [here](https://docs.google.com/spreadsheets/d/1SPfiIc_oA_E9VAP4oUWRh_nJFp9NKmdo71cqABOyKvc/edit?usp=sharing). Be sure to copy the credentials from the right row, because if someone shares the same key you might get undesired results and lose the competition.
+You can get your `CLIENT_ID` and `CLIENT_SECRET` by selecting the row with the number you received from [here](https://docs.google.com/spreadsheets/d/1SPfiIc_oA_E9VAP4oUWRh_nJFp9NKmdo71cqABOyKvc/edit?usp=sharing). 
+
+Be sure to copy the credentials from the right row, because if someone shares the same key you might get undesired results and lose the competition.
 
 Replace `CLIENT_ID` and `CLIENT_SECRET` with the values you received and run both scripts. The console should show something like: 
 ```json
