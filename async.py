@@ -1,20 +1,21 @@
 import json
 import time
-from lib.websocket import *
+from lib.websocket import WebSocketApp
 
 CLIENT_ID = ""
 CLIENT_SECRET = ""
 
-    
-def on_message(ws, message):
-  result = get_result(message)
 
-  # --> PARSE STREAM RESULT HERE <--
-
-def on_open(ws):
+def on_message(ws, message): 
+  result = get_result(message) 
+ 
+  if is_authenticated(ws, result): 
+    print("authenticated") 
+ 
+  # --> PARSE STREAM RESULT HERE <-- 
+ 
+def on_open(ws): 
   authenticate(ws)
-  time.sleep(1)
-  print('authenticated')
 
   # --> SUBSCRIBE TO STREAM HERE <--
 
