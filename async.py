@@ -5,7 +5,7 @@ from lib.websocket import WebSocketApp
 CLIENT_ID = ""
 CLIENT_SECRET = ""
 
-
+    
 def on_message(ws, message): 
   result = get_result(message) 
  
@@ -20,7 +20,7 @@ def on_open(ws):
   # --> SUBSCRIBE TO STREAM HERE <--
 
 def on_error(ws, error):
-  print('Error' , error)
+  pass
 
 def on_close(ws, close_status_code, close_msg):
   print("Connection closed.")
@@ -49,7 +49,8 @@ def get_result(msg):
   deserialized_msg = deserialize(msg)
 
   if 'error' in deserialized_msg:
-    raise Exception(deserialized_msg['error'])
+    pprint(deserialized_msg)
+    raise Exception()
 
   if 'result' in deserialized_msg:
     return deserialized_msg['result']
