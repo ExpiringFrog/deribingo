@@ -40,24 +40,7 @@ You can get your `CLIENT_ID` and `CLIENT_SECRET` by selecting the row with the n
 
 Be sure to copy the credentials from the right row, because if someone shares the same key you might get undesired results and lose the competition.
 
-Replace `CLIENT_ID` and `CLIENT_SECRET` with the values you received and run both scripts. The console should show something like: 
-```json
-{
-    "jsonrpc":"2.0",
-    "result": {
-            "token_type": "bearer",
-            "scope": "account:read_write block_trade:read_write connection custody:read_write mainaccount trade:read_write wallet:read_write",
-            "refresh_token": "XXXXX",
-            "expires_in": 31536000,
-            "access_token": "XXXXX"
-    },
-    "usIn": 1643798543728896,
-    "usOut": 1643798543729367,
-    "usDiff": 471,
-    "testnet": true
-}
-
-```
+Replace `CLIENT_ID` and `CLIENT_SECRET` with the values you received and run both scripts. The console should show `authenticated`. 
 If the console instead shows:
 ```json
 {
