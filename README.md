@@ -1,6 +1,6 @@
 # Deribingo
 
-The goal of this competition is to achieve bingo (i.e., a straight line of four cells) on the 'Deribingo' card, `bingocard.pdf`. Detailed explanations of each bingo cell/goal can be found [here](https://docs.google.com/document/d/1Oy7x9-gnVWtSWdc9Lv9OxfJLfyjU_mMeKO6PzLIrAqo/edit?usp=sharing).
+The goal of this competition is to achieve bingo (i.e., a straight line of four cells) on the 'Deribingo' card, `bingocard_final.pdf`. Detailed explanations of each bingo cell/goal can be found [here](https://docs.google.com/document/d/1Oy7x9-gnVWtSWdc9Lv9OxfJLfyjU_mMeKO6PzLIrAqo/edit?usp=sharing).
 
 The competition has a max duration of 2 hours.
 
