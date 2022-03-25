@@ -12,7 +12,7 @@ This instruction document explains on how to:
 
 ## Setup
 ### Replit
-The easiest way to start is by using Replit, a browser-based Integrated Development Environment (IDE). You can fork the repository by signing up [here](https://replit.com/teams/join/uljkhbowuvhfcewjuiqcsorbfwmsmqay-deribingo).
+The easiest way to start is by using Replit, a browser-based Integrated Development Environment (IDE). You can fork the repository by signing up [here](https://replit.com/teams/join/edtlyqmrjlpltfapfkvhfmsasciatyvt-SentilliaDeribingo).
 
 ### Locally
 However, if you'd like to develop locally, you can install the dependencies with the following steps depending on your Operating System (OS).
