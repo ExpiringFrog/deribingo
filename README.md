@@ -11,8 +11,6 @@ This instruction document explains on how to:
 - How to work with the Deribit API in a synchronous or asynchronous manner using the websocket protocol in the [Usage](#usage) section.
 
 ## Setup
-### Replit
-The easiest way to start is by using Replit, a browser-based Integrated Development Environment (IDE). You can fork the repository by signing up [here](https://replit.com/teams/join/edtlyqmrjlpltfapfkvhfmsasciatyvt-SentilliaDeribingo).
 
 ### Locally
 However, if you'd like to develop locally, you can install the dependencies with the following steps depending on your Operating System (OS).
@@ -30,6 +28,15 @@ Linux | [Instructions](#) |   [Instructions](https://git-scm.com/download/linux)
 Clone the deribingo repository into your current directory:
 ```bash
 git clone https://github.com/ExpiringFrog/deribingo.git
+```
+
+### Copy-and-paste
+If you are copy-and-pasting code from the repository to your local machine, you will want to install the `websocket-client` library.
+
+```bash
+python3 -m venv .venv/
+source .venv/bin/activate
+pip install websocket-client
 ```
 
 
@@ -73,11 +80,6 @@ def on_message(message):
 ```
  
 As a starting example, a simple authentication request is shown in the files `sync.py` and `async.py`.
-
-## Implementation
-### Replit
-Implement your solution in the `main.py` file, because Replit runs that file. You can copy the contents of either example as starting point.
-
 
 ## Debugging
 ### Replit
