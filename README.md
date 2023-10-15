@@ -12,8 +12,7 @@ This instruction document explains on how to:
 
 ## Setup
 
-## Installing Python and Git
-You can install the dependencies with the following steps depending on your Operating System (OS).
+If you do not already have them installed, you can install the dependencies with the following steps depending on your Operating System (OS).
 
 You're going to download and install Git and Python 3.8.2:
 
@@ -82,11 +81,8 @@ def on_message(message):
 As a starting example, a simple authentication request is shown in the files `sync.py` and `async.py`.
 
 ## Debugging
-### Replit
-In Replit you can go to the debugger panel and add breakpoints to the code. Simply click on the run button to start debugging.
 
-### Locally
-You can debug locally with:
+You can debug with:
 - The IDE of your choice
 - `pdb`. For example `python3 -m pdb sync.py`
 
