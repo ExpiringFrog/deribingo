@@ -12,8 +12,8 @@ This instruction document explains on how to:
 
 ## Setup
 
-### Locally
-However, if you'd like to develop locally, you can install the dependencies with the following steps depending on your Operating System (OS).
+## Installing Python and Git
+You can install the dependencies with the following steps depending on your Operating System (OS).
 
 You're going to download and install Git and Python 3.8.2:
 
