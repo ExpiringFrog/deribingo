@@ -79,5 +79,5 @@ You can debug with:
 
 - Start by analyzing the bingo card and documentation, so you can choose the fastest way to get a bingo.
 - Your code only needs to work for the 2 hours of the challenge, so don't waste time by making the code too general. The code can be very ugly.
-- Completing a task in one evaluation of your code is usually harder than going step-by-step.
+- Try to evaluate your solution for your current bingo goal step-by-step instead of trying all steps at once.
 - Make sure you understand the code of both `sync.py` and `async.py`.
