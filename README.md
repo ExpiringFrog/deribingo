@@ -29,17 +29,6 @@ Clone the deribingo repository into your current directory:
 git clone https://github.com/ExpiringFrog/deribingo.git
 ```
 
-### Copy-and-paste
-If you are copy-and-pasting code from the repository to your local machine, you will want to install the `websocket-client` library.
-
-```bash
-python3 -m venv .venv/
-source .venv/bin/activate
-pip install websocket-client
-```
-
-
-
 ## Authentication
 Once every dependency is installed and the source is downloaded, you can try to authenticate to the Deribit API.
 You can get your `CLIENT_ID` and `CLIENT_SECRET` by selecting the row with the number you received from [here](https://docs.google.com/spreadsheets/d/1SPfiIc_oA_E9VAP4oUWRh_nJFp9NKmdo71cqABOyKvc/edit?usp=sharing). 
@@ -88,7 +77,7 @@ You can debug with:
 
 ## Tips
 
-- Your code only needs to work for the 2 hours of the challenge, so don't waste time writing your code too general.
-- Completing a task in one evaluation of your code is usually harder than going step-by-step.
-- Make sure you understand the code from both examples.
 - Start by analyzing the bingo card and documentation, so you can choose the fastest way to get a bingo.
+- Your code only needs to work for the 2 hours of the challenge, so don't waste time by making the code too general. The code can be very ugly.
+- Completing a task in one evaluation of your code is usually harder than going step-by-step.
+- Make sure you understand the code of both `sync.py` and `async.py`.
