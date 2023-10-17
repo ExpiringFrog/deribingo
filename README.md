@@ -74,6 +74,7 @@ As a starting example, a simple authentication request is shown in the files `sy
 You can debug with:
 - The IDE of your choice
 - `pdb`. For example `python3 -m pdb sync.py`
+- `print()` statements
 
 ## Tips
 
