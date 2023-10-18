@@ -73,7 +73,7 @@ As a starting example, a simple authentication request is shown in the files `sy
 
 If you have SSL certificate issues you can replace: 
 A line in async.py with: ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE}) 
-A line in sync.py with: ws = websocket.WebSocket(sslopt={"cert_reqs": ssl.CERT_NONE})
+A line in sync.py with: ws = websocket.create_connection("wss://echo.websocket.events",sslopt={"cert_reqs": ssl.CERT_NONE})
 
 ## Debugging
 
