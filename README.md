@@ -69,6 +69,12 @@ def on_message(message):
  
 As a starting example, a simple authentication request is shown in the files `sync.py` and `async.py`.
 
+### SSL issues
+
+If you have SSL certificate issues you can replace: 
+A line in async.py with: ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE}) 
+A line in sync.py with: ws = websocket.WebSocket(sslopt={"cert_reqs": ssl.CERT_NONE})
+
 ## Debugging
 
 You can debug with:
